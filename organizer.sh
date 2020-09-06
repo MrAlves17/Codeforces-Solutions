@@ -1,6 +1,5 @@
 mkdir $(ls | sed 's/[A-Z].cpp//')
 mapfile -t files < <(ls -1 *.cpp);
-# echo "${files[]}"
 for i in "${!files[@]}"; do
 	folders[i]=$(echo ${files[i]} | sed 's/.cpp//') 
 	folders[i]=$(echo ${folders[i]} | sed 's/[a-z][0-9]//') 
